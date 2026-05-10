@@ -1,6 +1,6 @@
 import { defineConfig } from 'astro/config';
 
 export default defineConfig({
-  site: 'https://linlinCa.github.io',
+  site: 'https://linlinca.github.io',
   base: '/linlincai',
 });

@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+<BaseLayout lang="en" title="Projects | Linlincai" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">Projects</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container project-grid">
+      {projects.map((project) => <ProjectCard project={project} lang="en" />)}
+    </div>
+  </section>
+</BaseLayout>

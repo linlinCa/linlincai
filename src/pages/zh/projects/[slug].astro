@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projects } from '../../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+<BaseLayout lang="zh" title={`${project.title.zh} | 蔡琳琳`} currentPath={Astro.url.pathname}>
+  <section class="project-detail-hero">
+    <div class="container">
+      <p class="section-kicker">{project.category.zh}</p>
+      <h1 class="page-title">{project.title.zh}</h1>
+      <p class="page-subtitle">{project.subtitle.zh}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container project-detail-layout">
+      <article class="prose">
+        <img class="card" src={project.cover} alt={project.title.zh} />
+        <h2>项目概述</h2>
+        <p>{project.overview.zh}</p>
+        <h2>我的角色</h2>
+        <p>{project.role.zh}</p>
+        <h2>项目亮点</h2>
+        <ul>
+          {project.highlights.zh.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <aside class="card sidebar">
+        <div class="info-row">
+          <strong>时间</strong>
+          <span>{project.year}</span>
+        </div>
+        <div class="info-row">
+          <strong>类别</strong>
+          <span>{project.category.zh}</span>
+        </div>
+        <div class="info-row">
+          <strong>标签</strong>
+          <div class="tags">
+            {project.tags.zh.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
+        <div class="info-row">
+          <a class="button secondary" href="/zh/projects/">返回项目列表</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,58 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { projects } from '../../../data/projects';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+<BaseLayout lang="en" title={`${project.title.en} | Linlincai`} currentPath={Astro.url.pathname}>
+  <section class="project-detail-hero">
+    <div class="container">
+      <p class="section-kicker">{project.category.en}</p>
+      <h1 class="page-title">{project.title.en}</h1>
+      <p class="page-subtitle">{project.subtitle.en}</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container project-detail-layout">
+      <article class="prose">
+        <img class="card" src={project.cover} alt={project.title.en} />
+        <h2>Overview</h2>
+        <p>{project.overview.en}</p>
+        <h2>My Role</h2>
+        <p>{project.role.en}</p>
+        <h2>Highlights</h2>
+        <ul>
+          {project.highlights.en.map((item) => <li>{item}</li>)}
+        </ul>
+      </article>
+
+      <aside class="card sidebar">
+        <div class="info-row">
+          <strong>Year</strong>
+          <span>{project.year}</span>
+        </div>
+        <div class="info-row">
+          <strong>Category</strong>
+          <span>{project.category.en}</span>
+        </div>
+        <div class="info-row">
+          <strong>Tags</strong>
+          <div class="tags">
+            {project.tags.en.map((tag) => <span class="tag">{tag}</span>)}
+          </div>
+        </div>
+        <div class="info-row">
+          <a class="button secondary" href="/en/projects/">Back to Projects</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>

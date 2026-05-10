@@ -1,0 +1,28 @@
+---
+import { nav, site } from '../data/site';
+
+type Lang = 'en' | 'zh';
+const { lang = 'en', currentPath = '/' } = Astro.props as { lang?: Lang; currentPath?: string };
+const items = nav[lang];
+const otherLang: Lang = lang === 'en' ? 'zh' : 'en';
+const otherPath = currentPath.startsWith('/en')
+  ? currentPath.replace('/en', '/zh')
+  : currentPath.startsWith('/zh')
+    ? currentPath.replace('/zh', '/en')
+    : `/${otherLang}/`;
+---
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="logo" href={`/${lang}/`}>{site.name[lang]}</a>
+    <nav class="nav" aria-label="Main navigation">
+      {items.map((item) => (
+        <a href={item.href} class={currentPath === item.href ? 'active' : ''}>{item.label}</a>
+      ))}
+      <a class="lang-switch" href={otherPath} aria-label="Switch language">
+        <strong>{lang === 'en' ? 'EN' : '中文'}</strong>
+        <span>/</span>
+        <span>{lang === 'en' ? '中文' : 'EN'}</span>
+      </a>
+    </nav>
+  </div>
+</header>

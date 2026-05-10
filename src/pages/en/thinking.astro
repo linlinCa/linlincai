@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="en" title="Thinking | Linlincai" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">Thinking</p>
+      <h1 class="page-title">Notes on AI, product, and growth.</h1>
+      <p class="page-subtitle">
+        This page can start as a light archive for your essays, notes, and product reflections.
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container note-list">
+      <a class="card note-item" href="/en/thinking/ai-native-pm/">
+        <h3>In the AI era, PMs win by understanding users, value, and boundaries.</h3>
+        <p>A framework from Prof. Rubingsheng Ru: four stages for AI-native PMs, moving from tools to capability, systems, and value judgment.</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

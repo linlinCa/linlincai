@@ -1,0 +1,222 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="en" title="In the AI era, PMs win by understanding users, value, and boundaries | Linlincai" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">Thinking</p>
+      <h1 class="page-title" style="font-size: clamp(2rem, 4.6vw, 4rem);">In the AI era, PMs win by understanding users, value, and boundaries</h1>
+      <p class="page-subtitle">
+        Four stages for AI-native PMs: the final test is understanding users, not just AI.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="article-layout">
+        <aside class="sidebar toc-sidebar">
+          <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="toc-list">
+            TOC
+          </button>
+          <nav class="toc" id="toc-list">
+            <p class="toc-title">Contents</p>
+            <ul>
+              <li><a href="#stage-1">Stage 1: Tool use</a></li>
+              <li><a href="#stage-2">Stage 2: Capability transfer</a></li>
+              <li><a href="#stage-3">Stage 3: System design</a></li>
+              <li><a href="#stage-4">Stage 4: Value judgment</a></li>
+              <li><a href="#closing">Closing</a></li>
+            </ul>
+          </nav>
+        </aside>
+
+        <article class="prose">
+          <p>
+            I recently listened to a talk by Prof. Rubingsheng Ru on the growth path of AI-native PMs.
+            A framework in his talk resonated with me: in the AI era, product managers tend to move
+            through four stages: tool use, capability transfer, system design, and finally value judgment.
+          </p>
+
+          <hr />
+
+          <h2 id="stage-1">Stage 1: PMs start using AI tools, but the product has not changed yet</h2>
+          <p>
+            This is the most common and easiest to understand stage.
+            We use AI to draft PRDs, summarize meeting notes, analyze competitors, organize user feedback,
+            or generate first drafts of ideas.
+            But what matters most is not "how much efficiency I gained," it is whether the work style
+            <strong>shifts from consumption to investment.</strong>
+          </p>
+          <p>
+            In the past, many tasks ended when the delivery was done.
+            Now, a high-quality AI conversation can be distilled into skills, standards, knowledge cards,
+            and methods. So the key at this stage is not whether you can use the tools, but whether you
+            <strong>can turn each delivery into a long-term asset.</strong>
+          </p>
+          <p>
+            The stronger AI becomes, the more PMs need to train basic abilities: asking, thinking, judging,
+            hypothesizing, predicting, attributing, experimenting, and innovating. AI can generate a lot,
+            but quality still depends on whether you ask the right questions, judge the answers, and
+            design verification paths.
+          </p>
+
+          <hr />
+
+          <h2 id="stage-2">Stage 2: AI is integrated into products, but mostly as point enhancements</h2>
+          <p>
+            At this stage, products start to embed AI: smart summaries, auto generation, recommendations,
+            AI customer service, auto correction, image enhancement. The product form itself does not
+            fundamentally change yet. It is still "AI + product."
+          </p>
+          <p>
+            A key reminder: <strong>good AI features do not need to stand in the foreground and say "I am AI."</strong>
+            Many times AI should be like photo auto-enhance, keyboard auto-correct, or smart music in
+            editing tools, quietly helping users do things better. The user goal is not to "use AI";
+            <strong>the user goal is to complete a task.</strong>
+          </p>
+          <p>
+            That is why many AI products fall into the trap of turning everything into a chatbot.
+            But do users really need a chat box? Not always. Sometimes auto-complete, smart suggestions,
+            background detection, or a well-timed one-click generation feels more natural.
+          </p>
+          <p>
+            What PMs must do at this stage is <strong>understand the boundaries of LLMs.</strong> When can we trust it?
+            When must we question it? What can be generated, and what must be controlled by rules,
+            workflows, reviews, and safeguards?
+          </p>
+          <p>
+            Generative models are inherently uncertain and hallucinations are hard to eliminate.
+            <strong>The PM's value is not blind trust, but designing product systems that wrap uncertain
+            model capabilities into stable, controllable, and trustworthy processes.</strong>
+          </p>
+
+          <hr />
+
+          <h2 id="stage-3">Stage 3: PMs become builders of AI-native products</h2>
+          <p>
+            At the third stage, change is no longer about adding AI features.
+            The product form itself is reshaped by AI. AI-native products are not traditional software,
+            nor fully improvised software. They sit between: stable product systems with internal
+            dynamic decision-making and task orchestration based on user intent.
+          </p>
+          <p>
+            They usually have at least three layers. The first is the intent layer, where users do not
+            just click buttons or fill forms, but express goals. For example:
+          </p>
+          <ul>
+            <li>"Summarize this user interview into product opportunity points."</li>
+            <li>"Monitor how this batch of KOL videos performs after publishing."</li>
+            <li>"Identify the main risks behind this project's delay."</li>
+          </ul>
+          <p>
+            The second is the orchestration layer, where agents actually work. It decides how to break
+            tasks down, which steps are done by the model, which steps call tools, which require user
+            confirmation, which must use deterministic logic, how to retry on failure, and whether to
+            ask follow-up questions when information is missing.
+          </p>
+          <p>
+            The third is the execution layer: querying databases, calling APIs, creating tasks, updating
+            CRM, payments, reservations, and messaging. The more deterministic this layer is, the more
+            reliable the system becomes.
+          </p>
+          <p>
+            So AI-native products are not "let AI do everything." It is the opposite. <strong>PMs must decide
+            which steps need AI understanding and generation, which should rely on deterministic systems,
+            and which require human confirmation.</strong>
+          </p>
+          <p>
+            This raises a real issue: <strong>human-in-the-loop is not only an experience choice, it is also a
+            responsibility boundary.</strong> AI can draft an email, but a human should confirm before sending.
+            AI can plan a trip, but payment and booking should require confirmation. AI can assist medical
+            judgment, but cannot replace a doctor's diagnosis.
+          </p>
+          <p>
+            PRDs also change at this stage. In the past, PRDs documented requirements, flows, interactions,
+            and edge cases. AI-native PRDs must also define evaluation criteria, fallback logic, and
+            test data. What is a good output? What happens when the model is uncertain? How do we recover
+            from tool failures? Should we enforce confirmation for high-risk actions? Do we have task sets,
+            boundary cases, high-risk cases, and multi-turn examples? Without these, AI products risk being
+            "looks okay this time," without knowing whether they are truly improving.
+          </p>
+
+          <hr />
+
+          <h2 id="stage-4">Stage 4: PMs become value definers in the post-AI era</h2>
+          <p>
+            This is the most important layer for me. In the AI era, the winning PMs are not necessarily the
+            ones who understand AI the most, but the ones who understand users the most. Model capabilities
+            will become common, tool use will become common, and agent architectures will become common.
+            What becomes scarce is:
+          </p>
+          <ul>
+            <li>Do you understand the user's real context?</li>
+            <li>Do you know which problems are worth solving with AI?</li>
+            <li>Do you know where AI should not be overused?</li>
+            <li>Can you judge whether a feature truly helps users or only creates a sense of "smartness"?</li>
+          </ul>
+          <p>
+            Not every problem fits AI. Some problems do:
+          </p>
+          <ul>
+            <li>Information overload that needs understanding and filtering.</li>
+            <li>Complex workflows that need task decomposition.</li>
+            <li>High-cost content creation that benefits from assistance.</li>
+            <li>Ambiguous user intent that needs interpretation.</li>
+            <li>Strong personalization that rules cannot cover well.</li>
+          </ul>
+          <p>
+            But many problems may not fit AI:
+          </p>
+          <ul>
+            <li>Users need certainty and control.</li>
+            <li>Error costs are extremely high.</li>
+            <li>Users can already complete the task quickly.</li>
+            <li>AI makes the workflow more complex.</li>
+            <li>Users do not want to be auto-judged, auto-recommended, or auto-guided.</li>
+          </ul>
+          <p>
+            <strong>Mature AI PMs are not eager to AI-enable everything.</strong> They stay restrained. They know what
+            should be AI-driven and what should remain simple, transparent, and controllable.
+          </p>
+
+          <hr />
+
+          <h2 id="closing">Closing</h2>
+          <p>
+            A final question every PM should ask in the AI era:
+            <strong>Is your AI making users feel respected, manipulated, or exploited?</strong>
+          </p>
+          <p>
+            Good AI products do not constantly remind users "this uses AI." They make users feel:
+            this product understands me, this flow is smooth, this suggestion arrives at the right moment.
+            It saves effort without taking away control. It helps users reach their goals instead of being
+            dragged by algorithms.
+          </p>
+          <p>
+            The growth of AI-native PMs may not mean becoming more technical, but becoming better at value
+            judgment. Being able to use AI is the starting point. Designing AI features is the next step.
+            Building AI-native systems is capability. But the real height comes from understanding users,
+            having taste, judgment, empathy, and responsibility.
+          </p>
+          <p>
+            The most important question in the AI era might not be "Will AI replace me?" but rather
+            "Can I define the problems truly worth solving with AI?"
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const tocLayout = document.querySelector('.article-layout');
+  const tocToggle = document.querySelector('.toc-toggle');
+
+  if (tocLayout && tocToggle) {
+    tocToggle.addEventListener('click', () => {
+      const isOpen = tocLayout.classList.toggle('toc-open');
+      tocToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+  }
+</script>

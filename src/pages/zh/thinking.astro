@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+<BaseLayout lang="zh" title="思考 | 蔡琳琳" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">思考</p>
+      <h1 class="page-title">关于 AI、产品和成长的记录。</h1>
+      <p class="page-subtitle">
+        这个页面可以先作为轻量的文章和笔记入口，后续再慢慢扩展。
+      </p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container note-list">
+      <a class="card note-item" href="/zh/thinking/ai-native-pm/">
+        <h3>AI 时代，PM 最后拼的不是懂 AI，而是懂用户、懂价值、懂边界</h3>
+        <p>最近听了茹炳晟老师关于 AI Native 产品经理成长的分享，里面有一个框架我很受启发——AI 时代的产品经理，大概会经历四个阶段：工具使用、能力迁移、系统设计，最后走向价值判断。</p>
+      </a>
+    </div>
+  </section>
+</BaseLayout>

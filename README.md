@@ -1,46 +1,34 @@
-# Astro Starter Kit: Basics
+# Linlincai Personal Site Starter
 
-```sh
-npm create astro@latest -- --template basics
+Astro starter for a bilingual personal portfolio site.
+
+## Run locally
+
+```bash
+npm install
+npm run dev
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Build
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
+```bash
+npm run build
+npm run preview
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Replace content
 
-## 🧞 Commands
+- Edit personal links in `src/data/site.ts`
+- Edit project content in `src/data/projects.ts`
+- Replace resume PDFs in `public/resume/`
+- Replace project images in `public/images/projects/`
 
-All commands are run from the root of the project, from a terminal:
+## GitHub Pages
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+If your repo is `yourusername.github.io`, keep `site` in `astro.config.mjs` as your GitHub Pages domain.
 
-## 👀 Want to learn more?
+If your repo is a normal repo such as `personal-site`, add:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+```js
+base: '/personal-site'
+```

@@ -1,0 +1,77 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+---
+
+<BaseLayout lang="en" title="About | Linlincai" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">About</p>
+      <h1 class="page-title">I care about human uniqueness in the age of AI.</h1>
+      <p class="page-subtitle">
+        In a time of rapid technological change, I hope to explore what makes us uniquely human through products, reading, and continuous practice.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2 class="section-title">My path</h2>
+      </div>
+
+      <div class="prose">
+        <h3>Education</h3>
+
+        <div class="education-item">
+          <p class="education-meta">2024.09 – 2026.07</p>
+          <p>
+            <strong>The Hong Kong University of Science and Technology (Guangzhou)｜HKUST(GZ)</strong><br />
+            M.S. in Artificial Intelligence
+          </p>
+          <p>
+            Lab:
+            <a href="https://cislab.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer">Creative Intelligence and Synergy Lab (CIS Lab)</a>
+            ｜
+            Supervisor:
+            <a href="https://cislab.hkust-gz.edu.cn/members/zeyu-wang/" target="_blank" rel="noopener noreferrer">Prof. Zeyu Wang</a>
+            ｜
+            Co-supervisor:
+            <a href="https://www.yingcong.me/" target="_blank" rel="noopener noreferrer">Prof. Yingcong Chen</a>
+          </p>
+        </div>
+
+        <div class="education-item">
+          <p class="education-meta">2020.09 – 2024.07</p>
+          <p>
+            <strong>Zhejiang University</strong><br />
+            B.Eng. in Industrial Design
+          </p>
+          <p>
+            Lab:
+            <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank" rel="noopener noreferrer">Guanyun Lab</a>
+            ｜
+            Supervisor:
+            <a href="https://design.zju.edu.cn/guanyunlab/members/Guanyun_Wang" target="_blank" rel="noopener noreferrer">Prof. Guanyun Wang</a>
+          </p>
+        </div>
+
+        <h3>What I care about</h3>
+        <ul>
+          <li>What problems are truly worth solving with AI.</li>
+          <li>What kind of product experience makes users feel understood and respected.</li>
+          <li>How real user feedback can help products keep learning, iterating, and growing.</li>
+          <li>How to stay curious, humble, and guided by long-term taste in a rapidly changing technological environment.</li>
+        </ul>
+        <h3>Capabilities</h3>
+        <p>Product thinking, user research, prototyping, AI interaction design, low-code programming.</p>
+        <h3>Hobbies</h3>
+        <p>Basketball, fitness, and walking. Staying active keeps me grounded.</p>
+        <h3>Resume</h3>
+        <div class="hero-actions">
+          <a class="button primary button-sm" href={site.resume.zh}>Download Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

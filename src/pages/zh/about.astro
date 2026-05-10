@@ -1,0 +1,73 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { site } from '../../data/site';
+---
+<BaseLayout lang="zh" title="关于我 | 蔡琳琳" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">关于我</p>
+      <h1 class="page-title">我关心 AI 时代人的独特性。</h1>
+      <p class="page-subtitle">
+        在技术快速变化的时代，我希望通过产品、阅读和持续实践，不断挖掘作为人类的独特价值。
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <h2 class="section-title">我的路径</h2>
+      </div>
+      <div class="prose">
+        <h3>教育经历</h3>
+        <div class="education-item">
+          <p class="education-meta">2024.09 – 2026.07</p>
+          <p>
+            <strong>香港科技大学（广州）｜The Hong Kong University of Science and Technology (Guangzhou)</strong><br />
+            人工智能 · 硕士
+          </p>
+          <p>
+            实验室：
+            <a href="https://cislab.hkust-gz.edu.cn/" target="_blank" rel="noopener noreferrer">创意智能与协同实验室（CIS Lab）</a>
+            ｜
+            导师：
+            <a href="https://cislab.hkust-gz.edu.cn/members/zeyu-wang/" target="_blank" rel="noopener noreferrer">王泽宇</a>
+            ｜
+            二导：
+            <a href="https://www.yingcong.me/" target="_blank" rel="noopener noreferrer">陈颖聪</a>
+          </p>
+        </div>
+
+        <div class="education-item">
+          <p class="education-meta">2020.09 – 2024.07</p>
+          <p>
+            <strong>浙江大学｜Zhejiang University</strong><br />
+            工业设计 · 本科
+          </p>
+          <p>
+            实验室：
+            <a href="https://design.zju.edu.cn/guanyunlab/" target="_blank" rel="noopener noreferrer">智慧形态实验室（Guanyun Lab）</a>
+            ｜
+            导师：
+            <a href="https://design.zju.edu.cn/guanyunlab/members/Guanyun_Wang" target="_blank" rel="noopener noreferrer">王冠云</a>
+          </p>
+        </div>
+        <h3>我关心什么</h3>
+        <ul>
+          <li>什么问题真正值得被 AI 解决。</li>
+          <li>什么样的产品体验能让用户感到被理解和被尊重。</li>
+          <li>如何通过真实反馈，让产品持续学习、迭代和生长。</li>
+          <li>如何在快速变化的技术环境中，保持好奇、谦逊和长期审美。</li>
+        </ul>
+        <h3>能力方向</h3>
+        <p>产品思考、用户研究、原型设计、AI 交互设计、低代码编程。</p>
+        <h3>兴趣爱好</h3>
+        <p>打篮球、健身、散步，生命在于运动！</p>
+        <h3>简历</h3>
+        <div class="hero-actions">
+          <a class="button primary button-sm" href={site.resume.zh}>下载简历</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

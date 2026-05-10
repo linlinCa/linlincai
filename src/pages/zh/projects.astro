@@ -1,0 +1,17 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+<BaseLayout lang="zh" title="项目 | 蔡琳琳" currentPath={Astro.url.pathname}>
+  <section class="page-hero">
+    <div class="container">
+      <p class="section-kicker">项目</p>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container project-grid">
+      {projects.map((project) => <ProjectCard project={project} lang="zh" />)}
+    </div>
+  </section>
+</BaseLayout>

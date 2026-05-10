@@ -1,0 +1,11 @@
+---
+const { kicker, title, description, linkText, linkHref } = Astro.props;
+---
+<div class="section-header">
+  <div>
+    {kicker && <p class="section-kicker">{kicker}</p>}
+    <h2 class="section-title">{title}</h2>
+    {description && <p class="section-desc">{description}</p>}
+  </div>
+  {linkText && linkHref && <a class="button secondary" href={linkHref}>{linkText}</a>}
+</div>

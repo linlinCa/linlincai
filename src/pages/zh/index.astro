@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { projects } from '../../data/projects';
+---
+<BaseLayout lang="zh" title="蔡琳琳 | 产品经理 & AI 探索者" currentPath={Astro.url.pathname}>
+  <section class="hero">
+    <div class="container hero-layout">
+      <div class="hero-text">
+        <div class="eyebrow">产品经理 & AI 探索者</div>
+        <h1>君子不器。</h1>
+        <p>
+          不被单一角色定义，在研究、产品与表达之间，探索 AI 与人的关系。
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="/zh/projects/">查看项目</a>
+          <a class="button secondary" href="/zh/about/">了解我</a>
+        </div>
+      </div>
+      <div class="hero-portrait">
+        <img class="hero-photo" src="/images/profile.jpg" alt="蔡琳琳的照片" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container split">
+      <div>
+        <p class="section-kicker">关于我</p>
+        <h2 class="section-title">不设限的探索者。</h2>
+      </div>
+      <div class="prose">
+        <p>
+          在技术快速变化的时代，我希望通过产品、阅读和持续实践，不断挖掘作为人类的独特价值。
+        </p>
+        <p>
+          我关心什么问题真正值得被 AI 解决，也关心产品体验是否让用户感到被理解和被尊重。
+        </p>
+        <p>
+          我不给自己设限，也不贴标签，只专注于探索我真正好奇的事。——以欣然之态，做心爱之事。
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        kicker="Selected Projects"
+        title="一些我做过和探索过的项目"
+        description="不设限，各个领域都有所尝试。"
+        linkText="全部项目"
+        linkHref="/zh/projects/"
+      />
+      <div class="project-grid">
+        {projects.map((project) => <ProjectCard project={project} lang="zh" />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <SectionHeader
+        kicker="Thinking"
+        title="关于 AI、产品和成长的思考"
+        description="这里可以先从几篇文章开始，之后慢慢变成你的长期表达空间。"
+        linkText="阅读思考"
+        linkHref="/zh/thinking/"
+      />
+      <div class="note-list">
+        <a class="card note-item" href="/zh/thinking/ai-native-pm/">
+          <h3>AI 时代，PM 最后拼的不是懂 AI，而是懂用户、懂价值、懂边界</h3>
+          <p>最近听了茹炳晟老师关于 AI Native 产品经理成长的分享，里面有一个框架我很受启发——AI 时代的产品经理，大概会经历四个阶段：工具使用、能力迁移、系统设计，最后走向价值判断。</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

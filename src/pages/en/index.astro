@@ -15,8 +15,8 @@ import { projects } from '../../data/projects';
           product, and expression.
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="/en/projects/">View Projects</a>
-          <a class="button secondary" href="/en/about/">About Me</a>
+          <a class="button primary" href={`${import.meta.env.BASE_URL}en/projects/`}>View Projects</a>
+          <a class="button secondary" href={`${import.meta.env.BASE_URL}en/about/`}>About Me</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -54,7 +54,7 @@ import { projects } from '../../data/projects';
         title="A few things I’ve built and explored"
         description="Exploring across fields without setting limits."
         linkText="All Projects"
-        linkHref="/en/projects/"
+        linkHref={`${import.meta.env.BASE_URL}en/projects/`}
       />
       <div class="project-grid">
         {projects.map((project) => <ProjectCard project={project} lang="en" />)}
@@ -69,10 +69,10 @@ import { projects } from '../../data/projects';
         title="Notes on AI, product, and growth"
         description="A place for essays and notes. For now, this section can start small and grow with your writing."
         linkText="Read Notes"
-        linkHref="/en/thinking/"
+        linkHref={`${import.meta.env.BASE_URL}en/thinking/`}
       />
       <div class="note-list">
-        <a class="card note-item" href="/en/thinking/ai-native-pm/">
+        <a class="card note-item" href={`${import.meta.env.BASE_URL}en/thinking/ai-native-pm/`}>
           <h3>In the AI era, PMs win by understanding users, value, and boundaries.</h3>
           <p>A framework from Prof. Rubingsheng Ru: four stages for AI-native PMs, moving from tools to capability, systems, and value judgment.</p>
         </a>

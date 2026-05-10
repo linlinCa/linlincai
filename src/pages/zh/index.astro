@@ -14,8 +14,8 @@ import { projects } from '../../data/projects';
           不被单一角色定义，在研究、产品与表达之间，探索 AI 与人的关系。
         </p>
         <div class="hero-actions">
-          <a class="button primary" href="/zh/projects/">查看项目</a>
-          <a class="button secondary" href="/zh/about/">了解我</a>
+          <a class="button primary" href={`${import.meta.env.BASE_URL}zh/projects/`}>查看项目</a>
+          <a class="button secondary" href={`${import.meta.env.BASE_URL}zh/about/`}>了解我</a>
         </div>
       </div>
       <div class="hero-portrait">
@@ -51,7 +51,7 @@ import { projects } from '../../data/projects';
         title="一些我做过和探索过的项目"
         description="不设限，各个领域都有所尝试。"
         linkText="全部项目"
-        linkHref="/zh/projects/"
+        linkHref={`${import.meta.env.BASE_URL}zh/projects`}
       />
       <div class="project-grid">
         {projects.map((project) => <ProjectCard project={project} lang="zh" />)}
@@ -66,10 +66,10 @@ import { projects } from '../../data/projects';
         title="关于 AI、产品和成长的思考"
         description="这里可以先从几篇文章开始，之后慢慢变成你的长期表达空间。"
         linkText="阅读思考"
-        linkHref="/zh/thinking/"
+        linkHref={`${import.meta.env.BASE_URL}zh/thinking/`}
       />
       <div class="note-list">
-        <a class="card note-item" href="/zh/thinking/ai-native-pm/">
+        <a class="card note-item" href={`${import.meta.env.BASE_URL}zh/thinking/ai-native-pm/`}
           <h3>AI 时代，PM 最后拼的不是懂 AI，而是懂用户、懂价值、懂边界</h3>
           <p>最近听了茹炳晟老师关于 AI Native 产品经理成长的分享，里面有一个框架我很受启发——AI 时代的产品经理，大概会经历四个阶段：工具使用、能力迁移、系统设计，最后走向价值判断。</p>
         </a>

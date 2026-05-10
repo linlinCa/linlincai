@@ -3,22 +3,33 @@ import { nav, site } from '../data/site';
 
 type Lang = 'en' | 'zh';
 const { lang = 'en', currentPath = '/' } = Astro.props as { lang?: Lang; currentPath?: string };
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const normalizePath = (path: string) => {
+  if (base !== '/' && path.startsWith(base)) {
+    const trimmed = path.slice(base.length);
+    return trimmed.startsWith('/') ? trimmed : `/${trimmed}`;
+  }
+
+  return path;
+};
 const items = nav[lang];
 const otherLang: Lang = lang === 'en' ? 'zh' : 'en';
-const otherPath = currentPath.startsWith('/en')
-  ? currentPath.replace('/en', '/zh')
-  : currentPath.startsWith('/zh')
-    ? currentPath.replace('/zh', '/en')
+const path = normalizePath(currentPath);
+const otherPath = path.startsWith('/en')
+  ? path.replace('/en', '/zh')
+  : path.startsWith('/zh')
+    ? path.replace('/zh', '/en')
     : `/${otherLang}/`;
 ---
 <header class="site-header">
   <div class="container header-inner">
-    <a class="logo" href={`/${lang}/`}>{site.name[lang]}</a>
+    <a class="logo" href={withBase(`/${lang}/`)}>{site.name[lang]}</a>
     <nav class="nav" aria-label="Main navigation">
       {items.map((item) => (
-        <a href={item.href} class={currentPath === item.href ? 'active' : ''}>{item.label}</a>
+        <a href={withBase(item.href)} class={path === item.href ? 'active' : ''}>{item.label}</a>
       ))}
-      <a class="lang-switch" href={otherPath} aria-label="Switch language">
+      <a class="lang-switch" href={withBase(otherPath)} aria-label="Switch language">
         <strong>{lang === 'en' ? 'EN' : '中文'}</strong>
         <span>/</span>
         <span>{lang === 'en' ? '中文' : 'EN'}</span>

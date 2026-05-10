@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { site } from '../../data/site';
+const base = import.meta.env.BASE_URL;
+const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
 ---
 <BaseLayout lang="zh" title="关于我 | 蔡琳琳" currentPath={Astro.url.pathname}>
   <section class="page-hero">
@@ -65,7 +67,7 @@ import { site } from '../../data/site';
         <p>打篮球、健身、散步，生命在于运动！</p>
         <h3>简历</h3>
         <div class="hero-actions">
-          <a class="button primary button-sm" href={site.resume.zh}>下载简历</a>
+          <a class="button primary button-sm" href={withBase(site.resume.zh)}>下载简历</a>
         </div>
       </div>
     </div>

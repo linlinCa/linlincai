@@ -4,7 +4,7 @@ import SectionHeader from '../../components/SectionHeader.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
 import { projects } from '../../data/projects';
 const base = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const withBase = (path: string) => `${base.replace(/\/?$/, '/')}${path.replace(/^\//, '')}`;
 ---
 <BaseLayout lang="zh" title="蔡琳琳 | 产品经理 & AI 探索者" currentPath={Astro.url.pathname}>
   <section class="hero">

@@ -2,7 +2,7 @@
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { projects } from '../../../data/projects';
 const base = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const withBase = (path: string) => `${base.replace(/\/?$/, '/')}${path.replace(/^\//, '')}`;
 
 export function getStaticPaths() {
   return projects.map((project) => ({

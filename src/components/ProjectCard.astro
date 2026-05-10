@@ -2,7 +2,7 @@
 import type { Project, Lang } from '../data/projects';
 const { project, lang = 'en' } = Astro.props as { project: Project; lang?: Lang };
 const base = import.meta.env.BASE_URL;
-const withBase = (path: string) => `${base}${path.replace(/^\//, '')}`;
+const withBase = (path: string) => `${base.replace(/\/?$/, '/')}${path.replace(/^\//, '')}`;
 const href = withBase(`/${lang}/projects/${project.slug}/`);
 ---
 <a class="card project-card" href={href}>
